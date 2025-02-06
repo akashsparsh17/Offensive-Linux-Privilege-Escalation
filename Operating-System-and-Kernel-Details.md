@@ -1,4 +1,4 @@
-1. Basic System Information
+**1. Basic System Information**
 
   Kernel Version : 
 
@@ -19,7 +19,7 @@
     $ lsb_release -a
 
 
-2. Advanced System Details
+**2. Advanced System Details**
 
   System Hardware Details : 
 
@@ -41,7 +41,7 @@
 
     $ sysctl -a | grep kernel 
 
-3. Kernel Package Management 
+**3. Kernel Package Management **
 
   Query Installed Kernel Packages : 
 
@@ -56,8 +56,9 @@
     $ dpkg -l | grep kernel
 
 
-4. Kernel and Boot Information
 
+**4. Kernel and Boot Information
+**
   Kernel Boot Messages :
 
     $ dmesg | grep -i linux
@@ -68,7 +69,8 @@
 
     $ ls /boot | grep vmlinuz-
 
-5. Additional Useful Commands
+
+**5. Additional Useful Commands**
 
   List Active Kernel Modules :
 
