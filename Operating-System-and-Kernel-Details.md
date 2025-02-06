@@ -94,3 +94,12 @@
   Check Kernel Configuration (If Available) :
 
        $ zcat /proc/config.gz | grep CONFIG_
+
+#**Checking Vulnerable Kernel Versions** 
+
+## Overview 
+
+This script extracts and lists vulnerable Linux kernel versions based on the data from the lucyoa/kernel-exploits repository. It retrieves the README file and filters out kernel versions mentioned as vulnerable.
+---
+
+
