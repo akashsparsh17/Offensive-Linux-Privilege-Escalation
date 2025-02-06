@@ -1,3 +1,7 @@
+**Introduction**
+
+  Exploiting vulnerabilities in the kernel or kernel modules is a common method of privilege escalation. This typically requires an unpatched kernel with known vulnerabilities that allow users to escalate privileges.
+
 **1. Basic System Information**
 
   Kernel Version : 
@@ -42,7 +46,8 @@
   
       $ sysctl -a | grep kernel 
 
-**3. Kernel Package Management **
+
+**3. Kernel Package Management**
 
  
   Query Installed Kernel Packages : 
