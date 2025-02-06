@@ -96,11 +96,17 @@
        $ zcat /proc/config.gz | grep CONFIG_
 
 
-##**Checking Vulnerable Kernel Versions** 
+# **Checking Vulnerable Kernel Versions**
 
 ## Overview 
 
-This script extracts and lists vulnerable Linux kernel versions based on the data from the lucyoa/kernel-exploits repository. It retrieves the README file and filters out kernel versions mentioned as vulnerable.
+This script extracts and lists vulnerable Linux kernel versions based on the data from the [lucyoa/kernel-exploits](https://github.com/lucyoa/kernel-exploits) repository. It retrieves the README file and filters out kernel versions mentioned as vulnerable.
 ---
 
+**Usage :**
 
+    $ curl https://raw.githubusercontent.com/lucyoa/kernel-exploits/refs/heads/master/README.md 2>/dev/null | grep "Kernels: " | cut -d ":" -f 2 | cut -d "<" -f 1 | tr -d "," | tr ' ' '\n' | grep -v "^\d\.\d$" | sort -u -r | tr '\n' ' '  
+
+**Check for a Specific Kernel Version :**
+
+    $ curl https://raw.githubusercontent.com/lucyoa/kernel-exploits/refs/heads/master/README.md 2>/dev/null | grep "Kernels: " | cut -d ":" -f 2 | cut -d "<" -f 1 | tr -d "," | tr ' ' '\n' | grep -v "^\d\.\d$" | sort -u -r | tr '\n' ' ' | grep 3.8.2
