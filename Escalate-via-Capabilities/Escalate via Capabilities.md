@@ -1,5 +1,5 @@
 
-In This ReadMe we are having only capabilities by which, we can `escalate` more or less, directly or indirectly.
+In This  we are having only capabilities by which, we can `escalate` more or less, directly or indirectly.
 ## Table of Contents
 
 - [What are the Linux capabilities ?](#What%20are%20the%20Linux%20capabilities%20?)
