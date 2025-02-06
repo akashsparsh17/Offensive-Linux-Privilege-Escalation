@@ -1,6 +1,6 @@
 **Introduction**
 
-    Exploiting vulnerabilities in the kernel or kernel modules is a common method of privilege escalation. This typically requires an unpatched kernel with known vulnerabilities that allow users to escalate privileges.
+ Exploiting vulnerabilities in the kernel or kernel modules is a common method of privilege escalation. This typically requires an unpatched kernel with known vulnerabilities that allow users to escalate privileges.
 
 **1. Basic System Information**
 
