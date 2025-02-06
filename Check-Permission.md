@@ -102,11 +102,3 @@ find / -type f \( -iname "*.zip" -o -iname "*.tar" -o -iname "*.7z" -o -iname "*
 getcap -r / 2>/dev/null
 ```
 
----
-
-### **Improvements & Fixes**
-1. Fixed **`find / -perm 1777 -type f 2>/dev/null`**, which should be **`-type d`** instead of **`-type f`** (1777 is mainly for directories).
-2. Fixed **find writable directories for others** by removing the duplicate incorrect **`find / -type f -perm -o=wrx`** under that section.
-3. Clarified **SUID/SGID searches**, ensuring the correct `-perm` options are used.
-
-Would you like me to add explanations for each command? 🚀
