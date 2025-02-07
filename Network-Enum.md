@@ -1,4 +1,4 @@
-# Network Enumeration Guide
+# Network Enumeration
 
 ## Introduction
 Network Enumeration is the process of gathering information about a system’s network configuration, interfaces, routing, and active connections. This information is crucial for penetration testing, system auditing, or troubleshooting network-related issues.
