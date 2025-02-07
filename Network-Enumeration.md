@@ -6,7 +6,7 @@ Network Enumeration is the process of gathering information about a system’s n
 ---
 ## 1. Checking Network Interfaces & Configuration
 
-### View Active Network Interfaces
+View Active Network Interfaces
 ```sh
 ifconfig
 ifconfig -a  # Show inactive interfaces as well
