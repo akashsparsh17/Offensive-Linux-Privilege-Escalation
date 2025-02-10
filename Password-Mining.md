@@ -213,7 +213,7 @@ During penetration testing , configuration files can often contain hardcoded cre
 - `login.php` - Login script, handling user authentication, and potentially containing sensitive logic related to user access.
 - `install.php` - Installation script for setting up the application, often containing logic for initializing databases and configuring settings.
 
-## 3.History Files ( This files can cantain sensetive information )
+## 3.History Files ( These files can cantain sensitive information )
 - history - Displays the current user's shell command history from the current session or the .bash_history file.
 ### 3.1 User Command History Files
 
