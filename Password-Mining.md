@@ -134,7 +134,7 @@ for row in cursor.fetchall():
 
  - For automation, tools like LaZagne can be used:
  - GitHub Link: [LaZagne](https://github.com/AlessandroZ/LaZagne)
-            - LaZagne extracts saved credentials from multiple applications, including browsers.            
+        - LaZagne extracts saved credentials from multiple applications, including browsers.            
  - For more browsers , Applications and additional password extraction techniques, you can refer to LaZagne .
 
 ## 2.Configuration files which can cantains the passwords:-   
