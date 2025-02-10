@@ -115,8 +115,8 @@ sqlite3 "Login Data" "SELECT origin_url, username_value, password_value FROM log
 ### Decryption Tools:
 
  - Browser-Specific Tools:
-         • NirSoft Tools (e.g., ChromePass, WebBrowserPassView): For decrypting Chrome, Firefox, and Edge passwords on Windows.
-         • Firefox Decrypt: Specifically for Firefox passwords.
+        -  NirSoft Tools (e.g., ChromePass, WebBrowserPassView): For decrypting Chrome, Firefox, and Edge passwords on Windows.
+        -  Firefox Decrypt: Specifically for Firefox passwords.
 
 ### Manual Decryption:
 
