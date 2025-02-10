@@ -11,12 +11,9 @@ Web browsers like Chrome, Firefox, Chromium, Opera, and others store saved passw
 
 ### Password Location:
 
- -  Windows
-    ` : C:\Users\<Username>\AppData\Local\Google\Chrome\User Data\Default\Login Data `
- -  Linux: 
-     ` ~/.config/google-chrome/Default/Login Data `
- -  MacOS: 
-     ` ~/Library/Application Support/Google/Chrome/Default/Login Data `
+ -  Windows ` : C:\Users\<Username>\AppData\Local\Google\Chrome\User Data\Default\Login Data `
+ -  Linux:  ` ~/.config/google-chrome/Default/Login Data `
+ -  MacOS:  ` ~/Library/Application Support/Google/Chrome/Default/Login Data `
 
 ### Storage Format:
 
@@ -43,12 +40,9 @@ sqlite3 "Login Data" "SELECT origin_url, username_value, password_value FROM log
 
 ### Password Location:
 
- - Windows: 
-    ` C:\Users\<Username>\AppData\Roaming\Mozilla\Firefox\Profiles\<profile_name>\logins.json `
- - Linux: 
-    ` ~/.mozilla/firefox/<profile_name>/logins.json `
- - MacOS: 
-    ` ~/Library/Application/Support/Firefox/Profiles/<profile_name>/logins.json `
+ - Windows: ` C:\Users\<Username>\AppData\Roaming\Mozilla\Firefox\Profiles\<profile_name>\logins.json `
+ - Linux: ` ~/.mozilla/firefox/<profile_name>/logins.json `
+ - MacOS: ` ~/Library/Application/Support/Firefox/Profiles/<profile_name>/logins.json `
 
 ### Storage Format:
 
@@ -67,7 +61,7 @@ sqlite3 "Login Data" "SELECT origin_url, username_value, password_value FROM log
 
 ### Password Location:
 
- -  Linux: ~/.config/chromium/Default/Login Data
+ -  Linux: ` ~/.config/chromium/Default/Login Data `
 
 ### 	Storage & Decryption:
 
@@ -78,12 +72,9 @@ sqlite3 "Login Data" "SELECT origin_url, username_value, password_value FROM log
 
 ### Password Location:
 
-- Windows: 
-  ` C:\Users\<Username>\AppData\Roaming\Opera Software\Opera Stable\Login Data `
-- Linux:
-  `  ~/.config/opera/Default/Login Data `
-- MacOS:
-  ` ~/Library/Application Support/com.operasoftware.Opera/Login Data `
+- Windows: ` C:\Users\<Username>\AppData\Roaming\Opera Software\Opera Stable\Login Data `
+- Linux: ` ~/.config/opera/Default/Login Data `
+- MacOS: ` ~/Library/Application Support/com.operasoftware.Opera/Login Data `
 
 ### Storage & Decryption:
 
@@ -94,12 +85,9 @@ sqlite3 "Login Data" "SELECT origin_url, username_value, password_value FROM log
 
 ### Password Location:
 
- - Windows: 
-   ` C:\Users\<Username>\AppData\Local\Microsoft\Edge\User Data\Default\Login Data `
- - Linux:
-   ` ~/.config/microsoft-edge/Default/Login Data `
- - MacOS:
-   ` ~/Library/Application Support/Microsoft Edge/Default/Login Data `
+ - Windows: ` C:\Users\<Username>\AppData\Local\Microsoft\Edge\User Data\Default\Login Data `
+ - Linux: ` ~/.config/microsoft-edge/Default/Login Data `
+ - MacOS: ` ~/Library/Application Support/Microsoft Edge/Default/Login Data `
 
 ### 	Storage & Decryption:
 
