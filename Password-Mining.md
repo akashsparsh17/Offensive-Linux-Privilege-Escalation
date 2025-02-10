@@ -59,7 +59,7 @@ sqlite3 "Login Data" "SELECT origin_url, username_value, password_value FROM log
 
  - Decrypt the key4.db file, which stores encryption keys.
  - Use tools like Firefox [firefox_decrypt.py](https://github.com/unode/firefox_decrypt) 
-  `  firefox_decrypt.py -d ~/.mozilla/firefox/<profile_name>` 
+  `firefox_decrypt.py -d ~/.mozilla/firefox/<profile_name>` 
 
 ## **1.3 Chromium (Open-Source Chrome)**
 
@@ -77,11 +77,11 @@ sqlite3 "Login Data" "SELECT origin_url, username_value, password_value FROM log
 ### Password Location:
 
 - Windows: 
-   ` C:\Users\<Username>\AppData\Roaming\Opera Software\Opera Stable\Login Data `
+  ` C:\Users\<Username>\AppData\Roaming\Opera Software\Opera Stable\Login Data `
 - Linux:
-   `  ~/.config/opera/Default/Login Data `
+  `  ~/.config/opera/Default/Login Data `
 - MacOS:
-   ` ~/Library/Application Support/com.operasoftware.Opera/Login Data `
+  ` ~/Library/Application Support/com.operasoftware.Opera/Login Data `
 
 ### Storage & Decryption:
 
@@ -93,11 +93,11 @@ sqlite3 "Login Data" "SELECT origin_url, username_value, password_value FROM log
 ### Password Location:
 
  - Windows: 
-    ` C:\Users\<Username>\AppData\Local\Microsoft\Edge\User Data\Default\Login Data `
+   ` C:\Users\<Username>\AppData\Local\Microsoft\Edge\User Data\Default\Login Data `
  - Linux:
-    ` ~/.config/microsoft-edge/Default/Login Data `
+   ` ~/.config/microsoft-edge/Default/Login Data `
  - MacOS:
-    ` ~/Library/Application Support/Microsoft Edge/Default/Login Data `
+   ` ~/Library/Application Support/Microsoft Edge/Default/Login Data `
 
 ### 	Storage & Decryption:
 
@@ -144,8 +144,7 @@ for row in cursor.fetchall():
 
  - For automation, tools like LaZagne can be used:
  - GitHub Link: [LaZagne](https://github.com/AlessandroZ/LaZagne)
-           • LaZagne extracts saved credentials from multiple applications, including browsers.
-             `python3 LaZagne.py browsers` 
+            - LaZagne extracts saved credentials from multiple applications, including browsers.            
  - For more browsers , Applications and additional password extraction techniques, you can refer to LaZagne .
 
 ## 2.Configuration files which can cantains the passwords:-   
