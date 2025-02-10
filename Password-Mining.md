@@ -59,7 +59,6 @@ sqlite3 "Login Data" "SELECT origin_url, username_value, password_value FROM log
 
  - Decrypt the key4.db file, which stores encryption keys.
  - Use tools like Firefox [firefox_decrypt.py](https://github.com/unode/firefox_decrypt) 
-
   `firefox_decrypt.py -d ~/.mozilla/firefox/<profile_name>` 
 
 ## **1.3 Chromium (Open-Source Chrome)**
@@ -115,8 +114,8 @@ sqlite3 "Login Data" "SELECT origin_url, username_value, password_value FROM log
 ### Decryption Tools:
 
  - Browser-Specific Tools:
-        -  NirSoft Tools (e.g., ChromePass, WebBrowserPassView): For decrypting Chrome, Firefox, and Edge passwords on Windows.
-        -  Firefox Decrypt: Specifically for Firefox passwords.
+     - NirSoft Tools (e.g., ChromePass, WebBrowserPassView): For decrypting Chrome, Firefox, and Edge passwords on Windows.
+     - Firefox Decrypt: Specifically for Firefox passwords.
 
 ### Manual Decryption:
 
