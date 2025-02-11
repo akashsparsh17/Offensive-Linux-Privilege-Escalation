@@ -3,7 +3,7 @@ ACL allow us to appy a mpre specific set of permissions to a file or directory w
 
 ## The primary tools for managing ACLs are:
 - **getfacle**: – View ACL permissions
-- **setfacl**:setfacl – Modify ACL permissions
+- **setfacl**: – Modify ACL permissions
 
 ## Checking ACL permissions
 Use the getfacl command to check if a file or directory has ACLs set:
@@ -25,6 +25,13 @@ other::---
 Here, the user user1 has rwx permissions on the file, even though he is not the owner.
 # **Exploiting Misconfigured ACLs**
 If a user has excessive permissions on sensitive files or executables, privilege escalation may be possible.
+
+##The getfacl command retrieves Access Control List (ACL) information for files and directories to find unusual permissions.
+```bash
+ getfacl -t -s -R -p /etc /opt /tmp /bin /home /root /sbin /usr 2> /dev/null 
+ getfacl -t -s -R -p / 2>/dev/null | grep -vE "dev|var|run" 
+ getfacl -t -s -R -p / 2> /dev/null 
+```
 
 ### **Write Permissions on /etc/passwd**
 If an unprivileged user has write access to /etc/passwd, they can modify it to create a new user with root privileges.
