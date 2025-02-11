@@ -77,4 +77,6 @@ ls -lh /tmp/whoami
 chmod +x whoami
 ```
 **Finally, run the binary:**
+```
 ./user_hello
+```
