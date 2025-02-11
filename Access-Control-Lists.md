@@ -26,7 +26,7 @@ Here, the user user1 has rwx permissions on the file, even though he is not the 
 # **Exploiting Misconfigured ACLs**
 If a user has excessive permissions on sensitive files or executables, privilege escalation may be possible.
 
-## The getfacl command retrieves Access Control List (ACL) information for files and directories to find unusual permissions.
+### **The getfacl command retrieves Access Control List (ACL) information for files and directories to find unusual permissions.**
 ```bash
  getfacl -t -s -R -p /etc /opt /tmp /bin /home /root /sbin /usr 2> /dev/null 
  getfacl -t -s -R -p / 2>/dev/null | grep -vE "dev|var|run" 
