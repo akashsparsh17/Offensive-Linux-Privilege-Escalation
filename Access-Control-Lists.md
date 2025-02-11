@@ -24,6 +24,7 @@ other::---
 ```
 Here, the user user1 has rwx permissions on the file, even though he is not the owner.
 
+
 ## Exploiting Misconfigured ACLs
 If a user has excessive permissions on sensitive files or executables, privilege escalation may be possible.
 
