@@ -29,7 +29,6 @@ If a user has excessive permissions on sensitive files or executables, privilege
 ### **The getfacl command retrieves Access Control List (ACL) information for files and directories to find unusual permissions.**
 ```bash
  getfacl -t -s -R -p /etc /opt /tmp /bin /home /root /sbin /usr 2> /dev/null 
- getfacl -t -s -R -p / 2>/dev/null | grep -vE "dev|var|run" 
  getfacl -t -s -R -p / 2> /dev/null 
 ```
 
