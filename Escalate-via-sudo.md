@@ -72,6 +72,15 @@ su root
 echo "/bin/bash" >> /path/to/script.sh
 sudo /path/to/script.sh
 ```
+**If you're unable to modify the script directly, you can review it to identify any imported modules or packages that might be customizable.**
+For Example, if it is a python script then look for any imported package,
+Once you identify the modules in use, assess whether it's possible to make changes to them. 
+If you're able to modify any of the imported packages, you can introduce adjustments by adding simple lines of code within those packages, 
+depending on your access level.
+If it's possible to make changes, you could add a simple line of code which will edit the permissions of the '/etc/passwd' file.
+```
+os.system('chmod 777 /etc/passwd')
+```
 
 **If `sudo` allows running commands but does not clear environment variables:**
 ```
