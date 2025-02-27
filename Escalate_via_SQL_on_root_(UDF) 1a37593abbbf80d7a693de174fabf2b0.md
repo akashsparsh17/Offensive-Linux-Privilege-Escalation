@@ -224,7 +224,7 @@ Check secure_file_priv value
 show variables like '%secure_file_priv%';
 ```
 
-If it is empty you can read and write data in any directory.
+If it is empty you can read and write data/file in any directory.
 
 Switch to mysql database
 
