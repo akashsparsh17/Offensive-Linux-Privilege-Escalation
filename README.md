@@ -23,6 +23,8 @@ The repository consists of various Markdown (`.md`) files covering different pri
 - **[Shared Library Misconfigurations](https://github.com/InfoSecWarrior/Offensive-Linux-Privilege-Escalation/blob/main/Exploiting-Shared-Library-Misconfigurations.md)** – Exploiting shared library loading mechanisms.
 - **[Network Enumeration](https://github.com/InfoSecWarrior/Offensive-Linux-Privilege-Escalation/blob/main/Network-Enumeration.md)** – Identifying network services and misconfigurations.
 - **[Kernel & OS Enumeration](https://github.com/InfoSecWarrior/Offensive-Linux-Privilege-Escalation/blob/main/Operating-System-and-Kernel-Details.md)** – Gathering system and kernel details for exploitation.
+- **[User Home Directory Enumeration](https://github.com/InfoSecWarrior/Offensive-Linux-Privilege-Escalation/blob/main/User-Home-Directory-Enum.md)** – Enumerating user home directories for sensitive data and misconfigurations.
+
 
 ## 🚀 Getting Started
 
