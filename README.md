@@ -19,7 +19,7 @@ The repository consists of various Markdown (`.md`) files covering different pri
 - **[NFS Exploits](https://github.com/InfoSecWarrior/Offensive-Linux-Privilege-Escalation/blob/main/Escalate-via-nfs.md)** – Abusing NFS shares for privilege escalation.
 - **[Path Hijacking](https://github.com/InfoSecWarrior/Offensive-Linux-Privilege-Escalation/blob/main/Escalate-via-path-hijacking.md)** – Manipulating `PATH` environment variables for privilege escalation.
 - **[Sudo Exploits](https://github.com/InfoSecWarrior/Offensive-Linux-Privilege-Escalation/blob/main/Escalate-via-sudo.md)** – Misconfigurations in sudo rules leading to privilege escalation.
-- **[SQL Exploits](https://github.com/InfoSecWarrior/Offensive-Linux-Privilege-Escalation/blob/main/Escalate_via_SQL_on_root_(UDF).md)** – Using UDF (User Defined Functions) for privilege escalation.
+- **[SQL on root (UDF)](https://github.com/InfoSecWarrior/Offensive-Linux-Privilege-Escalation/blob/main/Escalate_via_SQL_on_root_(UDF).md)** – Using UDF (User Defined Functions) for privilege escalation.
 - **[Shared Library Misconfigurations](https://github.com/InfoSecWarrior/Offensive-Linux-Privilege-Escalation/blob/main/Exploiting-Shared-Library-Misconfigurations.md)** – Exploiting shared library loading mechanisms.
 - **[Network Enumeration](https://github.com/InfoSecWarrior/Offensive-Linux-Privilege-Escalation/blob/main/Network-Enumeration.md)** – Identifying network services and misconfigurations.
 - **[Kernel & OS Enumeration](https://github.com/InfoSecWarrior/Offensive-Linux-Privilege-Escalation/blob/main/Operating-System-and-Kernel-Details.md)** – Gathering system and kernel details for exploitation.
