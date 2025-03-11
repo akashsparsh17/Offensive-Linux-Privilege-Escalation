@@ -113,12 +113,12 @@ Not all SUID binaries are dangerous. Some are designed to run as **root** but ar
 SUID (SET User ID) files run with the permissions of the file owner, which is often the root user. if a SUID executable is vulnerable or misconfigured, it can be exploitaed to escalate privileges.
 
 #### Steps to Identify and Exploit SUID Files 
-##### 1. Find SUID Files :
+##### 1. Find SUID binary :
 ```bash 
 find / -type f -perm -u=s 2>dev/null
 ```
 
-##### 2. Anylyze SUID Files :
+##### 2. Anylyze SUID binary :
 - Check the purpose of the SUID file.
  ```bash
    find / -type f -perm -u=rws 2>/dev/null
