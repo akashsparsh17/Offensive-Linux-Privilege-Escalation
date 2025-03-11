@@ -1,29 +1,3 @@
- 
-###### Table of Contents
-
-- [Default Permissions of Important Files in Linux](#**Default%20Permissions%20of%20Important%20Files%20in%20Linux**)
-		- [Understanding file permissions is crucial for privilege escalation and security assessments. Below are the default permissions of critical system files in Linux](#Understanding%20file%20permissions%20is%20crucial%20for%20privilege%20escalation%20and%20security%20assessments.%20Below%20are%20the%20default%20permissions%20of%20critical%20system%20files%20in%20Linux:)
-- [Privilege Escalation via sensitive files](#Privilege%20Escalation%20via%20sensitive%20files)
-	- [1. Privilege Escalation through /etc/passwd](#1.%20Privilege%20Escalation%20through%20**/etc/passwd**)
-			- [1.1 check the permission of /etc/passwd](#1.1%20check%20the%20permission%20of%20/etc/passwd)
-			- [1.2 generate password hash](#1.2%20generate%20password%20hash)
-			- [1.3 Edit The /etc/passwd](#1.3%20Edit%20The%20/etc/passwd)
-			- [1.4 Then login with *root1* user using our password](#1.4%20Then%20login%20with%20*root1*%20user%20using%20our%20password)
-	- [2. Privilege Escalation through /etc/shadow](#2.%20Privilege%20Escalation%20through%20**/etc/shadow**)
-			- [2.1 check the permission of /etc/shadow](#2.1%20check%20the%20permission%20of%20/etc/shadow)
-			- [2.2 generate password hash](#2.2%20generate%20password%20hash)
-			- [2.3 Edit The /etc/shadow file](#2.3%20Edit%20The%20/etc/shadow%20file)
-			- [2.4 Then login with root1 user using our password](#2.4%20Then%20login%20with%20root1%20user%20using%20our%20password)
-	- [3. Privilege Escalation through /etc/group](#3.%20Privilege%20Escalation%20through%20**/etc/group**)
-			- [3.1 check the permission of /etc/group](#3.1%20check%20the%20permission%20of%20/etc/group)
-			- [3.2 Edit the /etc/group](#3.2%20Edit%20the%20/etc/group)
-			- [3.3  Reset Connection](#3.3%20%20Reset%20Connection)
-			- [3.4  login with normal user / get Shell](#3.4%20%20login%20with%20normal%20user%20/%20get%20Shell)
-	- [4. Privilege Escalation through /etc/gshadow](#4.%20Privilege%20Escalation%20through%20**/etc/gshadow**)
-			- [4.1 check the permission of /etc/gshadow](#4.1%20check%20the%20permission%20of%20**/etc/gshadow**)
-			- [4.2 generate password hash](#4.2%20generate%20password%20hash)
-			- [4.3 edit the /etc/gshadow](#4.3%20edit%20the%20/etc/gshadow)
-			- [4.4  login with sudo / wheel group](#4.4%20%20login%20with%20**sudo%20/%20wheel**%20group)
 
  
 ##  **Default Permissions of Important Files in Linux**
@@ -78,7 +52,7 @@ Apart of hash we can also use 0 (zero) for empty password
 ##### 1.4 Then login with *root1* user using our password 
 ![](Attachments/attachments/Pasted%20image%2020250221192427.png)
 
-
+---
 
 
 ### 2. Privilege Escalation through **/etc/shadow**
@@ -121,7 +95,7 @@ su - root1
 ![](Attachments/attachments/Pasted%20image%2020250221192427.png)
 
 
-
+---
 
 
 ### 3. Privilege Escalation through **/etc/group**
@@ -166,7 +140,7 @@ sudo su
 
 ![](Attachments/Pasted%20image%2020250221201305.png)
 
-
+---
 
 ### 4. Privilege Escalation through **/etc/gshadow**
 if we got write permission for other user on **/etc/gshadow** then we can add hash for **sudo/wheel** group to get root access
