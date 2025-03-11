@@ -118,7 +118,6 @@ vim /etc/group
 ```
 
 ![](Attachments/Pasted%20image%2020250221200113.png)
-
 ![](Attachments/Pasted%20image%2020250221200237.png)
 
 
