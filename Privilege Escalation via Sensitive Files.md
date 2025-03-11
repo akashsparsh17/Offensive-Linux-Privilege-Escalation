@@ -2,7 +2,7 @@
 ###### Table of Contents
 
 - [Default Permissions of Important Files in Linux](#**Default%20Permissions%20of%20Important%20Files%20in%20Linux**)
-		- [Understanding file permissions is crucial for privilege escalation and security assessments. Below are the default permissions of critical system files in Linux:](#Understanding%20file%20permissions%20is%20crucial%20for%20privilege%20escalation%20and%20security%20assessments.%20Below%20are%20the%20default%20permissions%20of%20critical%20system%20files%20in%20Linux:)
+		- [Understanding file permissions is crucial for privilege escalation and security assessments. Below are the default permissions of critical system files in Linux](#Understanding%20file%20permissions%20is%20crucial%20for%20privilege%20escalation%20and%20security%20assessments.%20Below%20are%20the%20default%20permissions%20of%20critical%20system%20files%20in%20Linux:)
 - [Privilege Escalation via sensitive files](#Privilege%20Escalation%20via%20sensitive%20files)
 	- [1. Privilege Escalation through /etc/passwd](#1.%20Privilege%20Escalation%20through%20**/etc/passwd**)
 			- [1.1 check the permission of /etc/passwd](#1.1%20check%20the%20permission%20of%20/etc/passwd)
